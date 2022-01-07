@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<div th:replace="fragments :: head"></div>
+	<title>Department</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1 th:text="${departments.name}"></h1>
+		<table class="table">
+
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Level</th>
+					<th scope="col">Address</th>
+					<th scope="col">Email</th>
+					<th scope="col">Website</th>
+
+				</tr>
+				</<thead>
+			<tbody>
+				<tr th:each="degree : ${degrees}">
+					<td th:text="${degree.name}"></td>
+					<td th:text="${degree.level}"></td>
+					<td th:text="${degree.address}"></td>
+					<td th:text="${degree.email}"></td>
+					<td th:text="${degree.website}"></td>
+
+
+				</tr>
+			</tbody>
+
+		</table>
+
+		<a class="btn btn-primary" th:href="@{/}">Torna alla Home</a>
+
+
+
+
+
+
+		<div th:replace="fragments :: scripts"></div>
+
+</body>
+
+</html>
